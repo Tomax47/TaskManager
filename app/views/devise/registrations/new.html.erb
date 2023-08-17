@@ -1,0 +1,57 @@
+
+
+<body>
+
+<center>
+
+  <h2 style="color: #0d6efd; font-size: 3em; font-weight: bold; padding-bottom: 0.5em">Register</h2>
+
+  <div class="card text-center" style="height: 27.5em; padding: 1em 2em 1em; width: 30em; border-radius: 2em; margin: 1em; box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 1.5em; color: #ED004A; font-size: 1.6em; font-weight: bold">Welcome To Tasko!</h5>
+
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="mb-3 row">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <div class="mb-3 row">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <div class="mb-3 row">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <div style="padding-bottom: 1em;">
+          <%= f.submit "Sign up" , class:"btn btn-light", style: "width: 12em; background-color:#ED004A; color:#ffffff; padding:0.5em; border-radius:0.5em; margin:0.5em;"%>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+</center>
+
+<center>
+  <div >
+    <%= render "devise/shared/links" %>
+  </div>
+</center>
+
+</body>
+
+
+
+
+
+

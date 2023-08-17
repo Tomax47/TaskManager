@@ -1,0 +1,51 @@
+
+<center>
+
+  <h2 style="color: #0d6efd; font-size: 3em; font-weight: bold; padding-bottom: 0.5em">Log in</h2>
+
+  <div class="card text-center" style="width: 18rem; padding: 1em 2em 1em; width: 30em; border-radius: 2em; margin: 1em;box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 1.5em; color: #ED004A; font-size: 1.6em; font-weight: bold">Welcome Back!</h5>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="mb-3 row">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <div class="mb-3 row">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password",class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-check" style="padding-top: 0.5em; padding-bottom: 1em">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div style="padding-bottom: 1em;">
+          <%= f.submit "Log in", class:"btn btn-primary", style: "width: 12em; background-color:#0d6efd; color:#ffffff; padding:0.5em; border-radius:0.5em"%>
+        </div>
+
+      <%end %>
+
+      <div>
+      </div>
+
+    </div>
+  </div>
+  <div style="display: inline-block">
+    <%= render "devise/shared/links" %>
+  </div>
+
+</center>
+
+
+
+
+
+
+

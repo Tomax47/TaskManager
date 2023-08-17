@@ -1,0 +1,52 @@
+<center>
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="card text-center" style="width: 18rem; padding: 1em 2em 1em; width: 30em; border-radius: 2em; margin: 1em; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 1.5em; color: #ED004A; font-size: 1.5em">Fill The Task Information</h5>
+
+      <div class="mb-3 row">
+        <%= form.label :task_name %>
+        <%= form.text_field :task_name , class:"form-control", style:"border-radius: 1em;"%>
+      </div>
+
+      <div class="mb-3 row">
+        <%= form.label :start_date%>
+        <%= form.date_field :start_date , class:"form-control", style:"border-radius: 1em;" %>
+      </div>
+
+      <div class="mb-3 row">
+        <%= form.label :end_date %>
+        <%= form.date_field :end_date, class:"form-control", style:"border-radius: 1em;"  %>
+      </div>
+
+      <div class="mb-3 row">
+        <%= form.label :notes %>
+        <%= form.text_field :notes, class:"form-control", style:"border-radius: 0.8em;"  %>
+      </div> <br/>
+
+      <div class="mb-3 row">
+        <%= form.number_field :user_id, id: :task_user_id, class:"form-control", style:"border-radius: 0.8em;", value: current_user.id, type: :hidden %>
+      </div> <br/>
+
+      <div>
+        <%= form.submit class:"btn btn-primary" %>
+      </div>
+
+    </div>
+  </div>
+
+<% end %>
+</center>

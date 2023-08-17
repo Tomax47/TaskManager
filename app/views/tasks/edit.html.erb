@@ -1,0 +1,14 @@
+<center>
+
+  <h1 style="color: #0d6efd; font-size: 3em; font-weight: bold; padding-bottom: 0.5em">Editing task</h1>
+
+  <%= render "form", task: @task %>
+
+  <br>
+
+  <div>
+    <%= link_to "Show Task", @task , class:"btn btn-light", style: "width: 12em; background-color:#0d6efd; color:#ffffff; "%>
+    <%= link_to "Back To Tasks", tasks_path, class:"btn btn-light", style: "width: 12em; background-color:#FF5D7A; color:#ffffff "%>
+  </div>
+
+</center>

@@ -1,0 +1,35 @@
+<body>
+
+<center>
+  <h2 style="color: #0d6efd; font-size: 3em; font-weight: bold; padding-bottom: 0.5em; margin-bottom: 2em">Forgot your password?</h2>
+
+  <div class="card text-center" style="height: 17em; padding: 1em 2em 1em; width: 30em; border-radius: 2em; margin: 1em; box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 1.5em; color: #ED004A; font-size: 1.6em; font-weight: bold">Enter Your Email!</h5>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="mb-3 row">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", style:"border-radius: 1em; padding-bottom:0.5em" %>
+        </div>
+
+        <p style="font-style: initial; color: #2E2F30">Send Me Password Reset Instructions</p>
+        <div style="padding-bottom: 1em;">
+          <%= f.submit "Submit", class:"btn btn-light", style: "width: 12em; background-color:#ED004A; color:#ffffff; padding:0.5em; border-radius:0.5em;" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</center>
+
+<center>
+  <%# render "devise/shared/links" %>
+</center>
+</body>
+
+
+
+
+

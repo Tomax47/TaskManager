@@ -1,0 +1,29 @@
+
+<body style="background-color: #ffffff">
+
+<center>
+
+  <br/><br/><br/><br/>
+  <div class="card text-center" style="width: 23em; display: inline-block; border-radius: 1em; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+    <div class="card-body" >
+
+      <h4 style="font-weight: bold; font-size: 2em; margin-bottom: 0.8em; color:#ED004A"><%= @task.task_name %></h4>
+      <div><h5 style="mso-ansi-font-weight: bold; margin: 0.8em; color:#454555">Start date</h5><%= @task.start_date %></div>
+      <div><h5 style="mso-ansi-font-weight: bold; margin: 0.8em; color:#454555">End date</h5><%= @task.end_date %></div>
+      <div><h5 style="mso-ansi-font-weight: bold; margin: 0.8em; color:#454555">Notes</h5><%= @task.notes %></div>
+
+      <div style="margin-top: 0.9em; display: inline-block; padding-top: 1em">
+        <%= link_to "Edit", edit_task_path(@task) , class:"btn btn-light", style: "width: 20em; padding-bottom:0.8em; border-radius:1em"%>
+        <%= button_to "Delete", @task, method: :delete, class:"btn btn-light", style: "width: 20em; background-color:#ED004A; color:#ffffff; border-radius:1em"%>
+      </div>
+
+    </div>
+
+  </div>
+  <div style="padding-top: 1em">
+    <%= link_to "Back to tasks", tasks_path, class: "btn btn-primary", style: "border-radius:1em"%>
+  </div>
+
+</center>
+
+</body>
